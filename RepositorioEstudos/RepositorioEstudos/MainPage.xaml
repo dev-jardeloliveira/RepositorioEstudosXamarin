@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RepositorioEstudos.MainPage"
+             Title="Funcionalidades">
+
+    <StackLayout Margin="20">
+        
+        <Label  HorizontalOptions="Start"  FontSize="12">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding QrCodeCommand}" />
+                </Label.GestureRecognizers>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Funcionalidade (clique) " TextColor="#444444"/>
+                    <Span Text="QR CODE " TextColor="Black" TextDecorations="Underline" FontSize="14"/>
+                    <Span Text="o meio mais simples e prático de compartilhar informação. " TextColor="#444444"/>
+                </FormattedString>
+            </Label.FormattedText>
+            </Label>
+      
+    </StackLayout>
+
+</ContentPage>

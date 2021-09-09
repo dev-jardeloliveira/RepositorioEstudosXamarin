@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RepositorioEstudos.View.QrCodeView"
+             Title="Leitor de QR CODE">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label HorizontalTextAlignment="Center"  >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="BARCODE " TextColor="LightGray" FontAttributes="Bold" FontSize="30"/>
+                        <Span Text="QR CODE" FontAttributes="Bold" FontSize="36"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label HorizontalTextAlignment="Center"  >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Funcionalidade implementada para realizar leitura de  "  TextColor="LightSkyBlue"  FontSize="11"/>
+                        <Span Text="QR CODE" TextColor="LightGray" FontAttributes="Bold" FontSize="14"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Image Source="qrcode.png" HorizontalOptions="CenterAndExpand" VerticalOptions="Start"
+                   WidthRequest="150">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ScannerCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+            <Label HorizontalTextAlignment="Center"  >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Clique na imagem " FontAttributes="Italic"  TextColor="LightSkyBlue"  FontSize="12"/>
+                        <Span Text="para inciar" FontAttributes="Bold"  FontSize="15"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
