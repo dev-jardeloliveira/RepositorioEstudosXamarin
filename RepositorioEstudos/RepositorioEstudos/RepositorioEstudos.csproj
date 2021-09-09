@@ -11,6 +11,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Best School.otf" />
+    <None Remove="Fonts\Brightholiday.ttf" />
+    <None Remove="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <None Remove="Fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <None Remove="Fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <None Remove="Fonts\Hamberger-Bold.ttf" />
+    <None Remove="Fonts\KGEverSinceNewYork.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Fonts\Best School.otf" />
+    <EmbeddedResource Include="Fonts\Brightholiday.ttf" />
+    <EmbeddedResource Include="Fonts\Font Awesome 5 Brands-Regular-400.otf" />
+    <EmbeddedResource Include="Fonts\Font Awesome 5 Free-Regular-400.otf" />
+    <EmbeddedResource Include="Fonts\Font Awesome 5 Free-Solid-900.otf" />
+    <EmbeddedResource Include="Fonts\Hamberger-Bold.ttf" />
+    <EmbeddedResource Include="Fonts\KGEverSinceNewYork.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="ZXing.Net.Mobile" Version="2.4.1" />
@@ -22,6 +42,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="View\FontesView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\QrCodeView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

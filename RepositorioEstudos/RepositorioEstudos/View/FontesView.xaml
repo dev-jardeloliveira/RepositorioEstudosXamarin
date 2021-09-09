@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RepositorioEstudos.View.FontesView"
+             xmlns:icon="clr-namespace:RepositorioEstudos.Fonts"
+             Title="Fontes">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Label" >
+                <Setter Property="FontSize" Value="36"/>
+                <Setter Property="TextColor" Value="DodgerBlue"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Label Text="Fonte: Brightholiday"   FontFamily="Brightholiday"   />
+            <Label Text="Fonte: Best School"   FontFamily="Best School" />
+            <Label Text="Fonte: Hamberger-Bold"   FontFamily="Hamberger-Bold" />
+            <Label Text="Fonte: KGEverSinceNewYork"   FontFamily="KGEverSinceNewYork" />
+            <StackLayout Orientation="Horizontal" Spacing="15">
+                <Label Text="{x:Static icon:Icon.Amazon }"   FontFamily="Brands-Regular-400" />
+                <Label Text="{x:Static icon:Icon.Adn }"   FontFamily="Brands-Regular-400" />
+                <Label Text="{x:Static icon:Icon.Angellist }"   FontFamily="Brands-Regular-400" />
+                <Label Text="{x:Static icon:Icon.Youtube }"   FontFamily="Brands-Regular-400" />
+                <Label Text="{x:Static icon:Icon.Facebook }"   FontFamily="Brands-Regular-400" />
+                <Label Text="{x:Static icon:Icon.Instagram }"   FontFamily="Brands-Regular-400" />
+                <Label Text="{x:Static icon:Icon.Linkedin }"   FontFamily="Brands-Regular-400" />
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
