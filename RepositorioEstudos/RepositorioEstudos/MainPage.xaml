@@ -30,7 +30,17 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-
+        <Label  HorizontalOptions="Start"  FontSize="12">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding CustomCommand}" />
+            </Label.GestureRecognizers>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Trabalhando com (clique) " TextColor="#444444"/>
+                    <Span Text="Custom " TextColor="Black" TextDecorations="Underline" FontSize="14"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
 
     </StackLayout>
 

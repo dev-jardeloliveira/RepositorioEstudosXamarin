@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:custom="clr-namespace:RepositorioEstudos.Custom"
+             xmlns:font="clr-namespace:RepositorioEstudos.Fonts"
+             xmlns:converter="clr-namespace:RepositorioEstudos.Converter"
+             xmlns:behaviour="clr-namespace:RepositorioEstudos.Behavour"
+             x:Class="RepositorioEstudos.View.ComponentesCustomView"
+             Title="Custom Renderer"
+             Visual="Material">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converter:ValidationErrorConverter x:Key="ValidationErrorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20">
+                <Label Text="EntryCustom" />
+                <custom:EntryCustom Placeholder="Texto aqui" BorderColor="Black" BorderThickness="1" Image="ic_user" ImageHeight="20" ImageWidth="20" ImageAlignment="Left"/>
+                <custom:EntryCustom Placeholder="Texto aqui" BorderColor="Green" BorderThickness="1" CornerRadius="10" Image="ic_user" ImageHeight="20" ImageWidth="20" ImageAlignment="Left"  />
+                <custom:EntryCustom Placeholder="Texto aqui" BorderColor="Red" BorderThickness="1" CornerRadius="100" Image="ic_user" ImageHeight="20" ImageWidth="20" ImageAlignment="Left" />
+                <custom:EntryCustom Placeholder="Texto aqui" BackgroundColor="LightGray"  />
+            </StackLayout>
+        </ScrollView>       
+    </ContentPage.Content>
+</ContentPage> 

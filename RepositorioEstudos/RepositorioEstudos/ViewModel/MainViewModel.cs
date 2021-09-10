@@ -15,6 +15,10 @@ namespace RepositorioEstudos.ViewModel
         {
             await App.Current.MainPage.Navigation.PushAsync(new FontesView());
         });
+        public ICommand CustomCommand => new Command(async () =>
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new ComponentesCustomView());
+        });
         #endregion
     }
 }
