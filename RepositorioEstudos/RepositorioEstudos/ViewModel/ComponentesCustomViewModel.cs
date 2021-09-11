@@ -1,8 +1,5 @@
 ﻿using RepositorioEstudos.Validacao;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Text;
 
 namespace RepositorioEstudos.ViewModel
 {
@@ -16,13 +13,8 @@ namespace RepositorioEstudos.ViewModel
         }
         #endregion
         #region Propriedades
-        private ValidatableObject<string> _nome;       
-
-        public ValidatableObject<string> Nome
-        {
-            get { return _nome; }
-            set { _nome = value; }
-        }
+        public ValidatableObject<string> Nome { get; set; } = new ValidatableObject<string>();
+      
 
         #endregion
     }

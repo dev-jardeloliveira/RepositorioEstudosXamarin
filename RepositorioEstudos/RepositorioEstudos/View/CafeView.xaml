@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RepositorioEstudos.View.CafeView"
+             xmlns:panc="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="Transparent"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <panc:PancakeView CornerRadius="20">
+            <Grid>
+                <Image Source="fd_cafe_top" Aspect="AspectFit"  HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand" />
+                <Grid RowDefinitions="Auto,Auto,Auto" Margin="20" RowSpacing="0">
+                    <Label Text="Cafeteria" TextColor="#fff"  FontSize="40" FontFamily="Cream Cake"
+                   Grid.Row="0" Margin="0,50,0,0"/>
+                    <Label Text="Bom Sabor" TextColor="#fff"  FontSize="60" FontFamily="Cream Cake"  
+                   Grid.Row="1"/>
+                </Grid>
+                <panc:PancakeView BackgroundColor="#fff" Margin="0,240,0,0" CornerRadius="50,0,0,0" HorizontalOptions="FillAndExpand" Padding="10">
+                    <ScrollView>
+                        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                            <StackLayout Spacing="30" Orientation="Horizontal" Margin="50,10,0,0" Grid.Row="0">
+                                <Label Text="Quente" TextColor="#111"/>
+                                <Label Text="Frio" TextColor="#111" />
+                                <Label Text="Outros" TextColor="#111" />
+                            </StackLayout>
+                            <Frame Grid.Row="1" BackgroundColor="WhiteSmoke" Padding="0" CornerRadius="100">
+                                <SearchBar Placeholder="Pesquise o seu café"   />
+                            </Frame>
+                            
+                            <Grid Grid.Row="2" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*,*" Margin="0,30,20,0">
+                                <Image Source="cafe0" Aspect="AspectFit"  VerticalOptions="Center" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
+                                <Label Text="Title" Grid.Column="1" Grid.Row="0" FontSize="14" TextColor="Black"  />
+                                <Label Text="Descrição do café" Grid.Column="1" Grid.Row="1" FontSize="12"   />
+                                <Label Text="R$ 5,00" Grid.Column="1" Grid.Row="2" FontSize="12" TextColor="Black"   />
+                                <Label Text="+" TextColor="#111" FontSize="25" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3"/>
+                            </Grid>
+                            <Grid Grid.Row="3" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*,*" Margin="0,30,20,0">
+                                <Image Source="cafe0" Aspect="AspectFit"  VerticalOptions="Center" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
+                                <Label Text="Title" Grid.Column="1" Grid.Row="0" FontSize="14" TextColor="Black"  />
+                                <Label Text="Descrição do café" Grid.Column="1" Grid.Row="1" FontSize="12"   />
+                                <Label Text="R$ 5,00" Grid.Column="1" Grid.Row="2" FontSize="12" TextColor="Black"   />
+                                <Label Text="+" TextColor="#111" FontSize="25" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3"/>
+                            </Grid>
+                            <Grid Grid.Row="4" RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*,*" Margin="0,30,20,0">
+                                <Image Source="cafe0" Aspect="AspectFit"  VerticalOptions="Center" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
+                                <Label Text="Title" Grid.Column="1" Grid.Row="0" FontSize="14" TextColor="Black"  />
+                                <Label Text="Descrição do café" Grid.Column="1" Grid.Row="1" FontSize="12"   />
+                                <Label Text="R$ 5,00" Grid.Column="1" Grid.Row="2" FontSize="12" TextColor="Black"   />
+                                <Label Text="+" TextColor="#111" FontSize="25" VerticalOptions="Center" HorizontalOptions="End" Grid.Column="2" Grid.Row="0" Grid.RowSpan="3"/>
+                            </Grid>
+                        </Grid>
+                    </ScrollView>
+                </panc:PancakeView>
+            </Grid>
+        </panc:PancakeView>
+        
+      
+    </ContentPage.Content>
+</ContentPage>

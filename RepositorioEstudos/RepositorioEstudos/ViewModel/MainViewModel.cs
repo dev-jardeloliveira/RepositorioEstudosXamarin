@@ -19,6 +19,10 @@ namespace RepositorioEstudos.ViewModel
         {
             await App.Current.MainPage.Navigation.PushAsync(new ComponentesCustomView());
         });
+        public ICommand CafeCommand => new Command(async () =>
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new CafeView());
+        });
         #endregion
     }
 }

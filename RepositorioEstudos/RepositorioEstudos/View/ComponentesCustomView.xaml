@@ -21,7 +21,8 @@
                 <custom:EntryCustom Placeholder="Texto aqui" BorderColor="Black" BorderThickness="1" Image="ic_user" ImageHeight="20" ImageWidth="20" ImageAlignment="Left"/>
                 <custom:EntryCustom Placeholder="Texto aqui" BorderColor="Green" BorderThickness="1" CornerRadius="10" Image="ic_user" ImageHeight="20" ImageWidth="20" ImageAlignment="Left"  />
                 <custom:EntryCustom Placeholder="Texto aqui" BorderColor="Red" BorderThickness="1" CornerRadius="100" Image="ic_user" ImageHeight="20" ImageWidth="20" ImageAlignment="Left" />
-                <custom:EntryCustom Placeholder="Texto aqui" BackgroundColor="LightGray"  />
+                <custom:EntryCustom Placeholder="Texto aqui" BackgroundColor="LightGray" />
+
             </StackLayout>
         </ScrollView>       
     </ContentPage.Content>
