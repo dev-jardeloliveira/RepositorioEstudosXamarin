@@ -12,6 +12,20 @@ namespace RepositorioEstudos.View
         {
             InitializeComponent();
             this.BindingContext = new CafeViewModel();
+          
+           
         }
+
+        private void search_Focused(object sender, FocusEventArgs e)
+        {
+            pancake.Margin = new Thickness(0, 70, 0, 0);
+        }
+
+        private void search_Unfocused(object sender, FocusEventArgs e)
+        {
+            pancake.Margin = new Thickness(0, 240, 0, 0);
+        }
+
+      
     }
 }
