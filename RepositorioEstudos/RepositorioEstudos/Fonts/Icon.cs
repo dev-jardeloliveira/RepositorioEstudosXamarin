@@ -6,6 +6,7 @@ namespace RepositorioEstudos.Fonts
 {
     public static class Icon
     {
+        public static string Utensils = "\uf2e7";
         public static string Glass = "\uf000";
         public static string Music = "\uf001";
         public static string Search = "\uf002";

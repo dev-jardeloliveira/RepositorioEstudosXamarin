@@ -11,7 +11,7 @@
                 return false;
             }
 
-            var str = $"{value }";
+            var str = value as string;
             return !string.IsNullOrWhiteSpace(str);
         }
     }

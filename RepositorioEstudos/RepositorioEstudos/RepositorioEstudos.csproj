@@ -19,6 +19,7 @@
     <None Remove="Fonts\Font Awesome 5 Free-Solid-900.otf" />
     <None Remove="Fonts\Hamberger-Bold.ttf" />
     <None Remove="Fonts\KGEverSinceNewYork.ttf" />
+    <None Remove="Fonts\Roboto-Light.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,9 +31,12 @@
     <EmbeddedResource Include="Fonts\Font Awesome 5 Free-Solid-900.otf" />
     <EmbeddedResource Include="Fonts\Hamberger-Bold.ttf" />
     <EmbeddedResource Include="Fonts\KGEverSinceNewYork.ttf" />
+    <EmbeddedResource Include="Fonts\Roboto-Light.ttf" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MagicGradients" Version="1.3.1" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2083" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
@@ -41,6 +45,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="View\BackgroundGradientView.xaml.cs">
+      <DependentUpon>BackgroundGradientView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="View\BackgroundGradientView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="View\CafeView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -48,6 +61,15 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\FontesView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\FormsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\OcrView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="View\OnboardingView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="View\QrCodeView.xaml">

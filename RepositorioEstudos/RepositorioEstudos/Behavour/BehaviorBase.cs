@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using Xamarin.Forms;
 
 namespace RepositorioEstudos.Behavour
 {
     public class BehaviorBase<T> : Behavior<T>
-   where T : BindableObject
+     where T : BindableObject
     {
         #region Properties
         public T AssociatedObject

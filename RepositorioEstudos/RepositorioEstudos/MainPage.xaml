@@ -13,7 +13,7 @@
             <Label.FormattedText>
                 <FormattedString>
                     <Span Text="Funcionalidade (clique) " TextColor="#444444"/>
-                    <Span Text="QR CODE " TextColor="Black" TextDecorations="Underline" FontSize="14"/>
+                    <Span Text="QR CODE " TextColor="Black" TextDecorations="Underline" FontSize="20"/>
                     <Span Text="o meio mais simples e prático de compartilhar informação. " TextColor="#444444"/>
                 </FormattedString>
             </Label.FormattedText>
@@ -26,7 +26,7 @@
             <Label.FormattedText>
                 <FormattedString>
                     <Span Text="Trabalhando com (clique) " TextColor="#444444"/>
-                    <Span Text="FONTS " TextColor="Black" TextDecorations="Underline" FontSize="14"/>
+                    <Span Text="FONTS " TextColor="Black" TextDecorations="Underline" FontSize="20"/>
                 </FormattedString>
             </Label.FormattedText>
         </Label>
@@ -37,7 +37,7 @@
             <Label.FormattedText>
                 <FormattedString>
                     <Span Text="Trabalhando com (clique) " TextColor="#444444"/>
-                    <Span Text="Custom " TextColor="Black" TextDecorations="Underline" FontSize="14"/>
+                    <Span Text="Custom " TextColor="Black" TextDecorations="Underline" FontSize="20"/>
                 </FormattedString>
             </Label.FormattedText>
         </Label>
@@ -48,11 +48,43 @@
             <Label.FormattedText>
                 <FormattedString>
                     <Span Text="Trabalhando com (clique) " TextColor="#444444"/>
-                    <Span Text="Design " TextColor="Black" TextDecorations="Underline" FontSize="14"/>
+                    <Span Text="Design " TextColor="Black" TextDecorations="Underline" FontSize="20"/>
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-
+        <Label  HorizontalOptions="Start"  FontSize="12">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding GradientCommand}" />
+            </Label.GestureRecognizers>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Trabalhando com (clique) " TextColor="#444444"/>
+                    <Span Text="Gradiente" TextColor="Black" TextDecorations="Underline" FontSize="20"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label  HorizontalOptions="Start"  FontSize="12">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding FormularioCommand}" />
+            </Label.GestureRecognizers>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Trabalhando com (clique) " TextColor="#444444"/>
+                    <Span Text="Formulários" TextColor="Black" TextDecorations="Underline" FontSize="20"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label  HorizontalOptions="Start"  FontSize="12">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding OnboardingCommand}" />
+            </Label.GestureRecognizers>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Trabalhando com (clique) " TextColor="#444444"/>
+                    <Span Text="Onboarding" TextColor="Black" TextDecorations="Underline" FontSize="20"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
     </StackLayout>
 
 </ContentPage>

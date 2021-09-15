@@ -3,6 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="RepositorioEstudos.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <Style TargetType="Label" x:Key="ErrorTextStyle">
+                <Setter Property="TextColor" Value = "Red"   />
+                <Setter Property="FontSize" Value = "12"   />
+            </Style>
+        </ResourceDictionary>
+       
     </Application.Resources>
 </Application>

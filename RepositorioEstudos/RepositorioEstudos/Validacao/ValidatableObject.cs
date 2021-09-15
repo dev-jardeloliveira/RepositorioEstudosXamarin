@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
 
 namespace RepositorioEstudos.Validacao
 {
@@ -31,21 +29,6 @@ namespace RepositorioEstudos.Validacao
 
         public bool IsValid { get; set; } = true;
 
-        List<IValidationRegras<T>> IValidacao<T>.Validations => throw new NotImplementedException();
-
-        event PropertyChangedEventHandler INotifyPropertyChanged.PropertyChanged
-        {
-            add
-            {
-                throw new NotImplementedException();
-            }
-
-            remove
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public virtual bool Validate()
         {
             Errors.Clear();
@@ -62,6 +45,6 @@ namespace RepositorioEstudos.Validacao
         {
             return $"{Value}";
         }
-    
+
     }
 }

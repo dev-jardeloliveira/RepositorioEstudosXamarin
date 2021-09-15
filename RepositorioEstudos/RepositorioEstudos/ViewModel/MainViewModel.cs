@@ -23,6 +23,18 @@ namespace RepositorioEstudos.ViewModel
         {
             await App.Current.MainPage.Navigation.PushAsync(new CafeView());
         });
+        public ICommand GradientCommand => new Command(async () =>
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new BackgroundGradient());
+        });
+        public ICommand FormularioCommand => new Command(async () =>
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new FormsView());
+        });
+        public ICommand OnboardingCommand => new Command(async () =>
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new OnboardingView());
+        });
         #endregion
     }
 }

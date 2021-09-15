@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converter="clr-namespace:RepositorioEstudos.Converter"
+             xmlns:behaviors="clr-namespace:RepositorioEstudos.Behavour"
+             x:Class="RepositorioEstudos.View.FormsView"
+             xmlns:local="clr-namespace:RepositorioEstudos.ViewModel"
+             x:DataType ="local:FormsViewModel"
+             Visual="Material">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
+            <converter:ValidationErrorConverter x:Key="ValidationErrorConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="{Binding Nome.Value, Mode=TwoWay}" 
+                       Placeholder="First Name" >
+                <Entry.Behaviors>
+                    <behaviors:EntryLineValidationBehaviour  IsValid="{Binding Nome.IsValid}"/>
+                </Entry.Behaviors>
+            </Entry>
+
+            <Label Text="{Binding Nome.Errors, Converter={StaticResource ValidationErrorConverter},Mode=TwoWay}"                     
+                        IsVisible="{Binding Nome.IsValid, Converter={StaticResource InverseBoolConverter}}"
+                         Style="{StaticResource ErrorTextStyle}" />
+            
+            <Button Text="Validar campos" Command="{Binding ValidarCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
