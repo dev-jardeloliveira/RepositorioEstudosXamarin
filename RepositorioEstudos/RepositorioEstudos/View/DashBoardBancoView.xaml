@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fonts="clr-namespace:RepositorioEstudos.Fonts"
+             x:Class="RepositorioEstudos.View.DashBoardBancoView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Branco">#fff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <StackLayout BackgroundColor="OrangeRed" Padding="10">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*,*">
+                        <StackLayout Orientation="Horizontal" HorizontalOptions="Start" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" >
+                            <Frame CornerRadius="100" Padding="0" HeightRequest="30" WidthRequest="30" />
+                            <Label Text="Adriana" VerticalOptions="CenterAndExpand" TextColor="{StaticResource Branco}"
+                               FontSize="11"/>
+                        </StackLayout>
+
+                        <Label Text="{x:Static fonts:Icon.Search}" FontFamily="Solid-900" TextColor="{StaticResource Branco}"
+                           HorizontalOptions="EndAndExpand" FontSize="18" Grid.Row="0" Grid.Column="4" Margin="0,0,30,0" />
+                        <Label Text="{x:Static fonts:Icon.Bell}" FontFamily="Solid-900" TextColor="{StaticResource Branco}"
+                           HorizontalOptions="EndAndExpand" FontSize="18" Grid.Row="0" Grid.Column="4" />
+                        <Label  TextColor="{StaticResource Branco}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" 
+                            Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="30,30,0,0" >
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="{x:Static fonts:Icon.Eye}"  FontFamily="Solid-900" FontSize="18"/>
+                                    <Span Text="  saldo em conta"  FontFamily="Solid-900" FontSize="12"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding VisibilidadeSaldoCommand}" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                        <Label Text="R$ 1.000,00" IsVisible="{Binding VisibilidadeSaldo}" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource Branco}"
+                           Margin="40,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
+                        <BoxView HeightRequest="0.5" BackgroundColor="{StaticResource Branco}" 
+                             Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,10,0,0"/>
+                        <Label  TextColor="{StaticResource Branco}" VerticalOptions="CenterAndExpand"
+                            Margin="30,0,0,0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="cheque especial disponível R$" FontSize="12" />
+                                    <Span Text=" 500,00" FontSize="12" />
+                                    <Span Text="     >" FontSize="12"/>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </Grid>
+
+                </StackLayout>
+                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                    <StackLayout Padding="10" Orientation="Horizontal" Spacing="15">
+                        <StackLayout>
+                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
+                                <Label Text="{x:Static fonts:Icon.Home}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Soluções" FontSize="10" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
+                                <Label Text="{x:Static fonts:Icon.Expand}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Pix" FontSize="10" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
+                                <Label Text="{x:Static fonts:Icon.Btc}" FontFamily="Brands-Regular-400" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Bitcoint" FontSize="10" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
+                                <Label Text="{x:Static fonts:Icon.Barcode}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Pagar" FontSize="10" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
+                                <Label Text="{x:Static fonts:Icon.Car}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Financiamento" FontSize="10" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout>
+                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
+                                <Label Text="{x:Static fonts:Icon.Comment}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Contato" FontSize="10" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+                        <StackLayout>
+
+                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
+                                <Label Text="{x:Static fonts:Icon.ShoppingBag}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            </Frame>
+                            <Label Text="Campras" FontSize="10" HorizontalTextAlignment="Center" />
+                        </StackLayout>
+
+                     
+                    </StackLayout>
+                </ScrollView>
+              
+
+                <StackLayout BackgroundColor="LightGray" Padding="10,30,10,10">
+                    <ScrollView>
+                        <StackLayout>
+                            <Frame BackgroundColor="#1373D6"  CornerRadius="5" Padding="15" Margin="0,0,0,30">
+                                <Label  TextColor="{StaticResource Branco}"  >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{x:Static fonts:Icon.CreditCard}" FontSize="30"  FontFamily="Solid-900"  />
+                                            <Span Text="  Você tem mais limite de crédito disponível." FontSize="17"  />
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Frame>
+                            <Frame CornerRadius="5" Padding="0">
+                                <StackLayout>
+                                    <BoxView BackgroundColor="OrangeRed" HeightRequest="5"/>
+                                    <StackLayout Padding="10">
+                                        <Label Text="BankCard Mastercard" TextColor="Black" FontSize="18"  />
+                                        <Label Text="Internacional" FontSize="16" />
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </ScrollView>
+                    
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
+    </ContentPage.Content>
+</ContentPage>

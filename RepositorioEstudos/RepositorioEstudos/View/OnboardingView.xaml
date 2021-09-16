@@ -6,25 +6,31 @@
              x:Class="RepositorioEstudos.View.OnboardingView"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <CarouselView ItemsSource="{Binding Onboardings}"   HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Image Source="{Binding Imagem}"  Aspect="AspectFill" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
-                            <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="*" VerticalOptions="CenterAndExpand" RowSpacing="0">
-                                <Label Text="{x:Static font:Icon.Utensils}" FontFamily="Solid-900" FontSize="50" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" />
-                                <Label Text="{Binding Titulo}" TextColor="White"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
+            <StackLayout>
+           
+                <CarouselView ItemsSource="{Binding Onboardings}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                              Grid.Row="0">
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                            <Image Source="{Binding Imagem}"  Aspect="Fill" />
+
+                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,*,Auto" ColumnDefinitions="*"   Margin="10,150,10,0" >
+                                    <Label Text="{x:Static font:Icon.Utensils}" FontFamily="Solid-900" FontSize="50" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" />
+                                    <Label Text="{Binding Titulo}" TextColor="White"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"
                                        FontFamily="Roboto-Light" FontSize="40" Grid.Row="1"/>
-                                <Label Text="{Binding SubTitulo}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
-                                       TextColor="White" FontSize="16" Grid.Row="2"/>
-                                <Label Text="{Binding Texto}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
-                                       TextColor="White" FontSize="12" Grid.Row="3" Margin="0,30,0,0"/>
+                                    <Label Text="{Binding SubTitulo}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                       TextColor="White" FontSize="16" Grid.Row="2" FontFamily="Roboto-Light"/>
+                                    <Label Text="{Binding Texto}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" 
+                                       TextColor="White" FontSize="12" Grid.Row="3" Margin="0,30,0,0" FontFamily="Roboto-Light"/>
+                                    <Label Text="Continue" HorizontalTextAlignment="Center"  VerticalOptions="End" FontAttributes="Italic"
+                                       TextColor="White" FontSize="12" Grid.Row="4" Margin="0,0,0,20" />
+
+                                </Grid>
                             </Grid>
-                        </Grid>
-                    </DataTemplate>
-                </CarouselView.ItemTemplate>
-            </CarouselView>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

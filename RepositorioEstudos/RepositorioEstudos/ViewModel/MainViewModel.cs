@@ -35,6 +35,10 @@ namespace RepositorioEstudos.ViewModel
         {
             await App.Current.MainPage.Navigation.PushAsync(new OnboardingView());
         });
+        public ICommand DashBoardCommand => new Command(async () =>
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new DashBoardBancoView());
+        });
         #endregion
     }
 }
