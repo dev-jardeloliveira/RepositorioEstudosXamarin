@@ -96,6 +96,17 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
+        <Label  HorizontalOptions="Start"  FontSize="12">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding TikTokCommand}" />
+            </Label.GestureRecognizers>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Trabalhando com (clique) " TextColor="#444444"/>
+                    <Span Text="TikTok" TextColor="Black" TextDecorations="Underline" FontSize="20"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
     </StackLayout>
 
 </ContentPage>

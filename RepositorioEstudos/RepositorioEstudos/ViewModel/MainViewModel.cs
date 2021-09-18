@@ -37,7 +37,11 @@ namespace RepositorioEstudos.ViewModel
         });
         public ICommand DashBoardCommand => new Command(async () =>
         {
-            await App.Current.MainPage.Navigation.PushAsync(new DashBoardBancoView());
+            await App.Current.MainPage.Navigation.PushAsync(new DashboardBancoMasterView());
+        });
+        public ICommand TikTokCommand => new Command(async () =>
+        {
+            await App.Current.MainPage.Navigation.PushAsync(new TikTokView());
         });
         #endregion
     }

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:local ="clr-namespace:RepositorioEstudos.View"
+             xmlns:font="clr-namespace:RepositorioEstudos.Fonts"
+             x:Class="RepositorioEstudos.View.DashboardBancoMasterView"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <xct:TabView  TabStripPlacement="Bottom"  TabStripBackgroundColor="WhiteSmoke"  TabStripHeight="50" 
+                      IsSwipeEnabled="False">
+            <xct:TabViewItem TextColorSelected="OrangeRed"  >
+                <xct:TabViewItem.Icon>
+                    <FontImageSource Glyph="{x:Static font:Icon.Home}" FontFamily="Solid-900"   Color="LightGray" />
+                </xct:TabViewItem.Icon>
+                <local:DashBoardBancoView />
+            </xct:TabViewItem>
+            <xct:TabViewItem  Text="extrato" FontFamily="Roboto-Light" TextColor="Black"  HeightRequest="50" VerticalOptions="End">
+                <xct:TabViewItem.Icon>
+                    <FontImageSource Glyph="{x:Static font:Icon.List}" FontFamily="Solid-900"   Color="LightGray"  />
+                </xct:TabViewItem.Icon>
+            </xct:TabViewItem>
+            <xct:TabViewItem  Text="tranferência" FontFamily="Roboto-Light" TextColor="Black"  HeightRequest="50" VerticalOptions="End">
+                <xct:TabViewItem.Icon>
+                    <FontImageSource Glyph="{x:Static font:Icon.ShareSquare}" FontFamily="Solid-900"   Color="OrangeRed" />
+                </xct:TabViewItem.Icon>
+            </xct:TabViewItem>
+            <xct:TabViewItem  Text="serviços" FontFamily="Roboto-Light" TextColor="Black"  HeightRequest="50" VerticalOptions="End">
+                <xct:TabViewItem.Icon>
+                    <FontImageSource Glyph="{x:Static font:Icon.Braille}" FontFamily="Solid-900"   Color="OrangeRed" />
+                </xct:TabViewItem.Icon>
+            </xct:TabViewItem>
+            <xct:TabViewItem  Text="ajuda" FontFamily="Roboto-Light" TextColor="Black"  HeightRequest="50" VerticalOptions="End">
+                <xct:TabViewItem.Icon>
+                    <FontImageSource Glyph="{x:Static font:Icon.ExclamationCircle}" FontFamily="Solid-900"   Color="OrangeRed" />
+                </xct:TabViewItem.Icon>
+            </xct:TabViewItem>
+        </xct:TabView>
+        
+    </ContentPage.Content>
+</ContentPage>

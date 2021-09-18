@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:fonts="clr-namespace:RepositorioEstudos.Fonts"
              x:Class="RepositorioEstudos.View.DashBoardBancoView"
+             
              NavigationPage.HasNavigationBar="False">
-    <ContentPage.Resources>
+    <ContentView.Resources>
         <ResourceDictionary>
             <Color x:Key="Branco">#fff</Color>
+           
         </ResourceDictionary>
-    </ContentPage.Resources>
-    <ContentPage.Content>
+    </ContentView.Resources>
+    <ContentView.Content>
         <ScrollView>
             <StackLayout Spacing="0">
                 <StackLayout BackgroundColor="OrangeRed" Padding="10">
@@ -40,7 +42,7 @@
                            Margin="40,0,0,0" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4"/>
                         <BoxView HeightRequest="0.5" BackgroundColor="{StaticResource Branco}" 
                              Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="5" Margin="0,10,0,0"/>
-                        <Label  TextColor="{StaticResource Branco}" VerticalOptions="CenterAndExpand"
+                        <Label  TextColor="{StaticResource Branco}" VerticalOptions="CenterAndExpand" IsVisible="{Binding VisibilidadeSaldo}"
                             Margin="30,0,0,0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4">
                             <Label.FormattedText>
                                 <FormattedString>
@@ -53,59 +55,28 @@
                     </Grid>
 
                 </StackLayout>
-                <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
-                    <StackLayout Padding="10" Orientation="Horizontal" Spacing="15">
-                        <StackLayout>
-                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
-                                <Label Text="{x:Static fonts:Icon.Home}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            </Frame>
-                            <Label Text="Soluções" FontSize="10" HorizontalTextAlignment="Center" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
-                                <Label Text="{x:Static fonts:Icon.Expand}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            </Frame>
-                            <Label Text="Pix" FontSize="10" HorizontalTextAlignment="Center" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
-                                <Label Text="{x:Static fonts:Icon.Btc}" FontFamily="Brands-Regular-400" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            </Frame>
-                            <Label Text="Bitcoint" FontSize="10" HorizontalTextAlignment="Center" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
-                                <Label Text="{x:Static fonts:Icon.Barcode}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            </Frame>
-                            <Label Text="Pagar" FontSize="10" HorizontalTextAlignment="Center" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
-                                <Label Text="{x:Static fonts:Icon.Car}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            </Frame>
-                            <Label Text="Financiamento" FontSize="10" HorizontalTextAlignment="Center" />
-                        </StackLayout>
-                        <StackLayout>
-                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
-                                <Label Text="{x:Static fonts:Icon.Comment}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            </Frame>
-                            <Label Text="Contato" FontSize="10" HorizontalTextAlignment="Center" />
-                        </StackLayout>
-                        <StackLayout>
+                <StackLayout Padding="10" HeightRequest="70">
+                    <CarouselView ItemsSource="{Binding Ativos}" PeekAreaInsets="100" >
+                        <CarouselView.ItemsLayout>
+                            <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                        </CarouselView.ItemsLayout>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout BackgroundColor="White" WidthRequest="30" HeightRequest="30" >
+                                    <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" >
 
-                            <Frame CornerRadius="10" Padding="10" BorderColor="LightGray" WidthRequest="30" HeightRequest="30" HorizontalOptions="Start">
-                                <Label Text="{x:Static fonts:Icon.ShoppingBag}" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            </Frame>
-                            <Label Text="Campras" FontSize="10" HorizontalTextAlignment="Center" />
-                        </StackLayout>
+                                        <Label Text="{Binding Icone}" TextType="Html" FontFamily="Solid-900" FontSize="25" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    </Frame>
+                                    <Label Text="{Binding Titulo}" FontSize="10" HorizontalTextAlignment="Center" />
+                                </StackLayout>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>
+                </StackLayout>
+             
 
-                     
-                    </StackLayout>
-                </ScrollView>
-              
-
-                <StackLayout BackgroundColor="LightGray" Padding="10,30,10,10">
-                    <ScrollView>
+                <StackLayout BackgroundColor="LightGray" VerticalOptions="FillAndExpand" Padding="10,30,10,10">
+                   
                         <StackLayout>
                             <Frame BackgroundColor="#1373D6"  CornerRadius="5" Padding="15" Margin="0,0,0,30">
                                 <Label  TextColor="{StaticResource Branco}"  >
@@ -120,19 +91,57 @@
                             <Frame CornerRadius="5" Padding="0">
                                 <StackLayout>
                                     <BoxView BackgroundColor="OrangeRed" HeightRequest="5"/>
-                                    <StackLayout Padding="10">
-                                        <Label Text="BankCard Mastercard" TextColor="Black" FontSize="18"  />
-                                        <Label Text="Internacional" FontSize="16" />
-                                    </StackLayout>
+                                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*">
+                                        <StackLayout Padding="10" Grid.Row="0" Grid.Column="0">
+                                            <Label Text="BankCard Mastercard" TextColor="Black" FontSize="18"  />
+                                            <Label Text="Internacional" FontSize="16" />
+                                            <Label TextColor="Black" >
+                                                <Label.FormattedText>
+                                                    <FormattedString>
+                                                        <Span Text="{x:Static fonts:Icon.CcMastercard}" FontFamily="Brands-Regular-400" FontSize="45" />
+                                                        <Span Text="{Binding FinalNumeroCartao,StringFormat='  final {0}'}"  FontSize="14"/>
+                                                    </FormattedString>
+                                                </Label.FormattedText>
+                                            </Label>
+                                        </StackLayout>
+                                        <Label HorizontalOptions="EndAndExpand" TextType="Html" Grid.Row="0" Grid.Column="1" Margin="0,0,10,0">
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding ExpandirFatura.Texto}  " FontSize="10" />
+                                                    <Span Text="{Binding ExpandirFatura.Icone}"   FontFamily="Solid-900" FontSize="8"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                            <Label.GestureRecognizers>
+                                                  <TapGestureRecognizer Command="{Binding VisibilidadeSaldoFaturaCommand }" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                          <StackLayout IsVisible="{Binding VisibilidadeSaldoFatura}"   Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,10,5,10">
+                                            <BoxView HeightRequest="0.5" BackgroundColor="LightGray"  />
+                                            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*">
+                                                <Label Text="limite utilizado" FontSize="10" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+                                                <Label Text="disponível" FontSize="10" HorizontalTextAlignment="Center" FontAttributes="Bold"  Grid.Row="0" Grid.Column="1"/>
+                                                <ProgressBar x:Name="progressBar" Progress="{Binding ProgressCartaoDeCredito}"  ProgressColor="OrangeRed" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+                                                <Label Text="{Binding ValorDisponivelCartaoDeCredito, StringFormat='{0:C2}'}" TextColor="Black" FontSize="10" HorizontalTextAlignment="Center" FontAttributes="Bold"  Grid.Row="2" Grid.Column="0"/>
+                                                <Label Text="{Binding ValorUtilizadoCartaoDeCredito,StringFormat='{0:C2}'}" TextColor="Black"  FontSize="10" HorizontalTextAlignment="Center" FontAttributes="Bold"  Grid.Row="2" Grid.Column="1"/>
+                                                <BoxView HeightRequest="0.5" BackgroundColor="LightGray"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"  />
+                                                <Label Text="fatura aberta" FontSize="10" HorizontalTextAlignment="Center" FontAttributes="Bold" Grid.Row="4" Grid.Column="0"/>
+                                                <Label Text="venc. 09 out" FontSize="10" HorizontalTextAlignment="Center" FontAttributes="Bold"  Grid.Row="4" Grid.Column="1"/>
+                                                <Label Text="{Binding ValorFaturaCartaoDeCredito, StringFormat='{0:C2}'}" TextColor="Black" FontSize="14" HorizontalTextAlignment="Center" FontAttributes="Bold"  Grid.Row="5" Grid.Column="0"/>
 
+                                            </Grid>
+                                            
+                                            
+                                        </StackLayout>
+                                    </Grid>
+                                
                                 </StackLayout>
                             </Frame>
                         </StackLayout>
-                    </ScrollView>
+                  
                     
                 </StackLayout>
             </StackLayout>
         </ScrollView>
         
-    </ContentPage.Content>
-</ContentPage>
+    </ContentView.Content>
+</ContentView>

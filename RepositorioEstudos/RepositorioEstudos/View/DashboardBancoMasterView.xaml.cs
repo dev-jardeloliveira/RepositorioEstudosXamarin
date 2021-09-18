@@ -6,15 +6,12 @@ using Xamarin.Forms.Xaml;
 namespace RepositorioEstudos.View
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DashBoardBancoView : ContentView
+    public partial class DashboardBancoMasterView : ContentPage
     {
-        public DashBoardBancoView()
+        public DashboardBancoMasterView()
         {
             InitializeComponent();
-            this.BindingContext = new DashBoardBancoViewModel();
-            
+            this.BindingContext = new DashboardBancoMasterViewModel();
         }
-
-        
     }
 }

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:local="clr-namespace:RepositorioEstudos"
+              xmlns:converter="clr-namespace:RepositorioEstudos.Converter"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="RepositorioEstudos.View.TikTokView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="tabTextColor" >#fff</Color>
+            <ControlTemplate x:Key="customTab">
+                <Image Source="tab_add_init" Aspect="AspectFit"  />
+            </ControlTemplate>
+            <converter:InverseTextLowerConverter x:Key="textConverterLower" />
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource tabTextColor}"/>
+               
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+  
+        <Grid  Margin="0" HorizontalOptions="FillAndExpand">
+        <xct:MediaElement Source="https://www.ionixjunior.com.br/wp-content/uploads/2020/08/video2.mp4" AutoPlay="True"  Aspect="AspectFill" />
+
+        <xct:TabView IsSwipeEnabled="False" TabStripPlacement="Bottom" VerticalOptions="EndAndExpand" >
+            <xct:TabViewItem Icon="tab_home_selected" Text="{Binding TabHome, Converter={StaticResource textConverterLower}}" />
+            <xct:TabViewItem Icon="tab_discover_init" Text="Descobrir" />
+            <xct:TabViewItem ControlTemplate="{StaticResource customTab}" Padding="15" />
+            <xct:TabViewItem Icon="tab_inbox_init" Text="Caixa" />
+            <xct:TabViewItem Icon="tab_me_init" Text="Perfil" />
+        </xct:TabView>
+    </Grid>
+      
+    
+        
+</ContentPage>
